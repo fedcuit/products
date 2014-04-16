@@ -1,0 +1,16 @@
+@(products: List[Product])(implicit lang: Lang)
+
+@main(Messages("application.name")) {
+    <table class="ui inverted celled table segment">
+        <thead>
+            <th>Product Name</th>
+            <th>Product Description</th>
+        </thead>
+        @for(product <- products) {
+            <tr>
+                <td>@product.name</td>
+                <td>@product.description</td>
+            </tr>
+        }
+    </table>
+}
