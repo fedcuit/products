@@ -1,16 +1,15 @@
 @(products: List[Product])(implicit lang: Lang)
 
 @main(Messages("application.name")) {
-    <table class="ui inverted celled table segment">
-        <thead>
-            <th>Product Name</th>
-            <th>Product Description</th>
-        </thead>
-        @for(product <- products) {
-            <tr>
-                <td>@product.name</td>
-                <td>@product.description</td>
-            </tr>
-        }
-    </table>
+    <div class="ui list">
+    @for(product <- products) {
+        <div class="item">
+            <i class="photo icon"></i>
+            <div class="content">
+                <div class="header">@product.name</div>
+                @product.description
+            </div>
+        </div>
+    }
+    </div>
 }
