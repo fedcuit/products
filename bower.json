@@ -1,0 +1,18 @@
+{
+  "name": "products",
+  "version": "0.0.0",
+  "homepage": "https://github.com/fedcuit/products",
+  "authors": [
+    "Erdong Feng <edfeng@thoughtworks.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ]
+}
