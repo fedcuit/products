@@ -1,3 +1,6 @@
+body {
+    background: url("../images/bg.jpg");
+}
 .main.menu {
     min-height: 30px;
 }
