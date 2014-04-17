@@ -1,1 +1,5 @@
 application.name = 产品目录
+product.name=产品名称
+ean = 编号
+name = 名称
+description = 描述

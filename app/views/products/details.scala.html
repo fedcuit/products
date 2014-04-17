@@ -1,6 +1,7 @@
 @(product: Product)(implicit lang: Lang)
 
 @main(Messages("product.name", product.name)) {
+    <h2>@product.name</h2>
     <div class="ui horizontal list">
         <div class="item">
             <div class="content">
