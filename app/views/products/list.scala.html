@@ -1,16 +1,13 @@
 @(products: List[Product])(implicit lang: Lang)
 
-    @main(Messages("application.name")) {
-        <div class="ui dividing header">@Messages("application.name")</div>
-        <div class="ui list">
-        @for(product <- products) {
-            <div class="item">
-                <i class="photo icon"></i>
-                <div class="content">
-                    <div class="header">@product.name</div>
-                    @product.description
-                </div>
-            </div>
-        }
-        </div>
+@main(Messages("application.name")) {
+    <h2>@Messages("application.name")</h2>
+    <ul>
+    @for(product <- products) {
+        <li>
+            @product.name
+        <small>@product.description</small>
+        </li>
     }
+    </ul>
+}

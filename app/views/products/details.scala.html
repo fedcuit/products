@@ -1,24 +1,12 @@
 @(product: Product)(implicit lang: Lang)
 
-@main(Messages("product.name", product.name)) {
-    <h2>@product.name</h2>
-    <div class="ui horizontal list">
-        <div class="item">
-            <div class="content">
-                <div class="header">@Messages("ean")</div>
-                @product.ean
-            </div>
-        </div>
-        <div class="item">
-            <div class="content">
-                <div class="header">@Messages("name")</div>
-                @product.name
-            </div>
-        </div><div class="item">
-        <div class="content">
-            <div class="header">@Messages("description")</div>
-            @product.description
-        </div>
-    </div>
-    </div>
-}
+    @main(Messages("product.name", product.name)) {
+        <h2>@product.name</h2>
+
+        <dl class="dl-horizontal">
+            <dt>@Messages("ean")</dt>
+            <dd>@product.ean</dd>
+            <dt>@Messages("name")</dt><dd>@product.name</dd>
+            <dt>@Messages("description")</dt><dd>@product.description</dd>
+        </dl>
+    }
