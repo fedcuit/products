@@ -1,6 +1,6 @@
 package controllers
 
-import play.api.mvc.{Action, Controller}
+import play.api.mvc.{Flash, Action, Controller}
 import play.api.data._
 import play.api.data.Forms._
 import models.Product
