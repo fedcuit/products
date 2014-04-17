@@ -4,4 +4,6 @@ body {
 .main.container-fluid {
     width: 1000px;
     margin: 50px auto 100px auto;
+    background-color: rgb(193, 236, 236);
+    border-radius: 10px;
 }
