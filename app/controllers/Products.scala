@@ -11,7 +11,7 @@ object Products extends Controller {
   def details(ean: Long) = Action {
     val product = Product.findByEan(ean)
     product match {
-      case Some(product) => Ok(views.html.products.details(product))
+      case Some(p) => Ok(views.html.products.details(p))
       case None => Ok(views.html.products.notFound())
     }
   }
