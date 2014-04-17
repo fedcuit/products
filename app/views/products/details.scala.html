@@ -3,10 +3,15 @@
     @main(Messages("product.name", product.name)) {
         <h2>@product.name</h2>
 
-        <dl class="dl-horizontal">
-            <dt>@Messages("ean")</dt>
-            <dd>@product.ean</dd>
-            <dt>@Messages("name")</dt><dd>@product.name</dd>
-            <dt>@Messages("description")</dt><dd>@product.description</dd>
-        </dl>
+        <div class="row">
+            <div class="col-lg-4">
+                <dl class="dl-horizontal">
+                    <dt>@Messages("ean")</dt>
+                    <dd>@product.ean</dd>
+                    <dt>@Messages("name")</dt><dd>@product.name</dd>
+                    <dt>@Messages("description")</dt><dd>@product.description</dd>
+                </dl>
+            </div>
+            <div class="col-lg-4">@tags.barcode(product.ean)</div>
+        </div>
     }

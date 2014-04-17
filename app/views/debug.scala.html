@@ -1,9 +1,7 @@
 @()(implicit lang: Lang)
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-offset-8 col-lg-4">
-            lang = @lang.code
-            data = @(new java.util.Date().format("yyyy-MM-dd HH:mm"))
-        </div>
+<div class="row">
+    <div class="col-lg-offset-8 col-lg-4">
+        lang = @lang.code
+        data = @(new java.util.Date().format("yyyy-MM-dd HH:mm"))
     </div>
 </div>

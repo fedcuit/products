@@ -1,10 +1,7 @@
 body {
     background: url("../images/bg.jpg");
 }
-.main.menu {
-    min-height: 30px;
-}
-.main.container {
+.main.container-fluid {
     width: 1000px;
     margin: 50px auto 100px auto;
 }

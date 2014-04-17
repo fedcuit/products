@@ -2,12 +2,14 @@
 
 @main(Messages("application.name")) {
     <h2>@Messages("application.name")</h2>
-    <ul>
-    @for(product <- products) {
-        <li>
-            @product.name
-        <small>@product.description</small>
-        </li>
-    }
-    </ul>
+    <div class="row">
+        <ul>
+        @for(product <- products) {
+            <li>
+                @product.name
+            <small>@product.description</small>
+            </li>
+        }
+        </ul>
+    </div>
 }

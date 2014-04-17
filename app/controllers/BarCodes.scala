@@ -2,7 +2,7 @@ package controllers
 
 import play.api.mvc.{Action, Controller}
 
-object BarCodes extends Controller {
+object Barcodes extends Controller {
   def barcode(ean: Long) = Action {
     val MimeType = "image/png"
     Ok(ean13BarCode(ean, MimeType)).as(MimeType)

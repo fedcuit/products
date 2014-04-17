@@ -5,6 +5,6 @@
 GET     /                           controllers.Application.index
 GET     /products                       controllers.Products.list
 GET     /product/:ean                   controllers.Products.details(ean: Long)
-GET     /barcode/:ean                   controllers.BarCodes.barcode(ean: Long)
+GET     /barcode/:ean                   controllers.Barcodes.barcode(ean: Long)
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
