@@ -1,4 +1,4 @@
-@(product: Product)(implicit lang: Lang)
+@(product: Product)(implicit lang: Lang, flash: Flash)
 
     @main(Messages("product.name", product.name)) {
         <h2>@product.name</h2>

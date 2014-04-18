@@ -1,15 +1,15 @@
-@(products: List[Product])(implicit lang: Lang)
+@(products: List[Product])(implicit lang: Lang, flash: Flash)
 
-@main(Messages("application.name")) {
-    <h2>@Messages("application.name")</h2>
-    <div class="row">
-        <ul>
-        @for(product <- products) {
-            <li>
-                @product.name
-            <small>@product.description</small>
-            </li>
-        }
-        </ul>
-    </div>
-}
+    @main(Messages("application.name")) {
+        <h2>@Messages("application.name")</h2>
+        <div class="row">
+            <ul>
+            @for(product <- products) {
+                <li>
+                    <a href="@routes.Products.details(product.ean)">@product.name</a>
+                    <small>@product.description</small>
+                </li>
+            }
+            </ul>
+        </div>
+    }
