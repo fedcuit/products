@@ -4,6 +4,7 @@
 # Home page
 GET     /                           controllers.Application.index
 GET     /products                       controllers.Products.list
+GET     /product/new                    controllers.Products.newProduct
 GET     /product/:ean                   controllers.Products.details(ean: Long)
 GET     /barcode/:ean                   controllers.Barcodes.barcode(ean: Long)
 # Map static resources from the /public folder to the /assets URL path
