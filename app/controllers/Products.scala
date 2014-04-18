@@ -16,14 +16,36 @@ object Products extends Controller {
   )
 
   def list = Action {
-    Ok(views.html.products.list(Product.findAll))
+    implicit request =>
+      Ok(views.html.products.list(Product.findAll))
   }
 
   def details(ean: Long) = Action {
-    val product = Product.findByEan(ean)
-    product match {
-      case Some(p) => Ok(views.html.products.details(p))
-      case None => Ok(views.html.products.notFound())
-    }
+    implicit request =>
+      Product.findByEan(ean).map(
+        product => Ok(views.html.products.details(product))
+      ).getOrElse(NotFound)
+  }
+
+  def newProduct = Action {
+    implicit request =>
+      val form = if (flash.get("error").isDefined) productForm.bind(flash.data) else productForm
+      Ok(views.html.products.newProduct(form))
+  }
+
+  def save = Action {
+    implicit request =>
+      val newProductForm: Form[Product] = productForm.bindFromRequest()
+      newProductForm.fold(
+        hasErrors = {
+          form =>
+            Redirect(routes.Products.newProduct()).flashing(Flash(form.data) + "error" -> "Please check your input")
+        },
+        success = {
+          newProduct =>
+            Product.add(newProduct)
+            Redirect(routes.Products.details(newProduct.ean)).flashing("success" -> "New product added successfully")
+        }
+      )
   }
 }
