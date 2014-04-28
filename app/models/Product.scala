@@ -23,4 +23,13 @@ object Product {
   def add(product: Product) {
     products += product
   }
+
+  def update(product: Product) = {
+    val option = Product.findByEan(product.ean)
+    option match {
+      case Some(p) => products = products.filterNot(_.ean == product.ean) + product
+      case None => new RuntimeException("product to be updated doesn't exist")
+    }
+  }
+
 }
