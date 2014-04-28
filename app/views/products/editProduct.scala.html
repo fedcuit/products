@@ -3,18 +3,15 @@
 @main("New Product") {
     <div class="row">
         <div class="col-lg-8">
-            <form role="form" action="@routes.Products.update" method="post">
-                <div class="form-group">
-                    <label for="ean">EAN</label>
-                    <input type="text" name="ean" id="ean" class="form-control"/>
-                </div>
+            <form role="form" action="@routes.Products.update(form.get.ean)" method="post">
+                <input type="hidden" name="ean" value="@form.get.ean"/>
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="name" class="form-control"/>
+                    <input type="text" name="name" id="name" class="form-control" value="@form.get.name"/>
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+                    <textarea name="description" id="description" cols="30" rows="10" class="form-control">@form.get.description</textarea>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Save</button>
