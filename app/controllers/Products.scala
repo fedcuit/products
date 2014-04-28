@@ -84,4 +84,15 @@ object Products extends Controller {
         }
       )
   }
+
+  def delete(ean: Long) = Action {
+    val option = Product.findByEan(ean)
+    option match {
+      case Some(x) =>
+        Product.remove(x)
+        Ok("Success")
+      case None => NotFound
+    }
+  }
+
 }

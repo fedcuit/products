@@ -55,5 +55,16 @@ class ProductTest extends org.scalatest.FunSpec with Matchers with BeforeAndAfte
       Product.findAll should have size 5
       Product.findByEan(5010255079763L).get.name should equal ("updated")
     }
+
+    it("should able to delete a product base on ean") {
+      Product.findAll should have size 5
+
+      val product = Product.findByEan(5010255079763L)
+      val expiredProduct = product.get.copy(name = "expired")
+
+      Product.remove(expiredProduct)
+
+      Product.findAll should have size 4
+    }
   }
 }

@@ -2,21 +2,23 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 # Home page
-GET         /                         controllers.Application.index
+GET           /                         controllers.Application.index
 
 # Product catalog
-GET         /products                 controllers.Products.list
+GET           /products                 controllers.Products.list
 
-GET         /product/new              controllers.Products.newProduct
-POST        /product                  controllers.Products.save
+GET           /product/new              controllers.Products.newProduct
+POST          /product                  controllers.Products.save
 
-GET         /product/:ean             controllers.Products.details(ean: Long)
+GET           /product/:ean             controllers.Products.details(ean: Long)
 
-GET         /product/:ean/edit        controllers.Products.editProduct(ean: Long)
-POST        /product/:ean             controllers.Products.update(ean: Long)
+GET           /product/:ean/edit        controllers.Products.editProduct(ean: Long)
+POST          /product/:ean             controllers.Products.update(ean: Long)
 
-GET         /barcode/:ean             controllers.Barcodes.barcode(ean: Long)
+DELETE        /product/:ean             controllers.Products.delete(ean: Long)
+
+GET           /barcode/:ean             controllers.Barcodes.barcode(ean: Long)
 
 
 # Map static resources from the /public folder to the /assets URL path
-GET         /assets/*file             controllers.Assets.at(path="/public", file)
+GET           /assets/*file             controllers.Assets.at(path="/public", file)
